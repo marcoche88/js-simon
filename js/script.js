@@ -22,6 +22,7 @@ Descrizione:
 
 // variabili
 var timerDisplay = document.getElementById("timer");
+var resultDisplay = document.getElementById("result");
 var maxNumber = 50;
 var time = 30;
 
@@ -42,7 +43,7 @@ while (randomNumbers.length < 5) {
 // mostrare i numeri generati all'utente
 alert("I numeri sono: " + randomNumbers.join(" - "));
 
-// mostrare timer 30 secondi
+// BONUS mostrare timer 30 secondi
 timerDisplay.innerText = time--;
 var intervalId = setInterval(function () {
     timerDisplay.innerText = time;
@@ -74,10 +75,13 @@ setTimeout(function () {
         }
     }
 
-    // mostrare quanti e quali numeri sono stati indovinati
-    alert("Hai indovinato " + predictNumbers.length + " numeri");
-    alert("I numeri indovinati sono " + predictNumbers.join(" - "));
-
+    // mostrare quanti e quali numeri sono stati indovinati, in pagina(BONUS)
+    timerDisplay.innerText = "";
+    var predict = "Hai indovinato " + predictNumbers.length + " numeri."
+    if (predictNumbers.length > 0) {
+        predict += "<br>I numeri indovinati sono " + predictNumbers.join(" - ");
+    }
+    resultDisplay.innerHTML = predict;
 }, 31000);
 
 

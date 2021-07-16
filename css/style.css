@@ -8,7 +8,15 @@ body {
     font-family: sans-serif;
 }
 
-#timer {
+#timer, #result {
     text-align: center;
+    margin-top: 20px;
+}
+
+#timer {
     font-size: 6em;
+}
+
+#result {
+    font-size: 3em;
 }
