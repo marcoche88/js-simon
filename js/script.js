@@ -21,8 +21,9 @@ Descrizione:
 */
 
 // variabili
+var timerDisplay = document.getElementById("timer");
 var maxNumber = 50;
-var time = 1000;
+var time = 30;
 
 // array numeri random, numeri utente e numeri indovinati
 var randomNumbers = [];
@@ -37,9 +38,20 @@ while (randomNumbers.length < 5) {
         randomNumbers.push(randomNum);
     }
 }
-console.log(randomNumbers);
+
 // mostrare i numeri generati all'utente
 alert("I numeri sono: " + randomNumbers.join(" - "));
+
+// mostrare timer 30 secondi
+timerDisplay.innerText = time--;
+var intervalId = setInterval(function () {
+    timerDisplay.innerText = time;
+    time--;
+    if (time < 0) {
+        clearInterval(intervalId);
+        timerDisplay.innerText = "TIME OUT"
+    }
+}, 1000)
 
 // aspettare 30 secondi prima di chiedere i numeri all'utente
 setTimeout(function () {
@@ -66,7 +78,7 @@ setTimeout(function () {
     alert("Hai indovinato " + predictNumbers.length + " numeri");
     alert("I numeri indovinati sono " + predictNumbers.join(" - "));
 
-}, time);
+}, 31000);
 
 
 // FUNZIONI
