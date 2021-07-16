@@ -24,7 +24,8 @@ Descrizione:
 var timerDisplay = document.getElementById("timer");
 var resultDisplay = document.getElementById("result");
 var maxNumber = 50;
-var time = 30;
+var time = 5;
+var predict = "";
 
 // array numeri random, numeri utente e numeri indovinati
 var randomNumbers = [];
@@ -77,12 +78,12 @@ setTimeout(function () {
 
     // mostrare quanti e quali numeri sono stati indovinati, in pagina(BONUS)
     timerDisplay.innerText = "";
-    var predict = "Hai indovinato " + predictNumbers.length + " numeri."
+    predict = "Hai indovinato " + predictNumbers.length + " numeri."
     if (predictNumbers.length > 0) {
-        predict += "<br>I numeri indovinati sono " + predictNumbers.join(" - ");
+        predict += "<br>I numeri indovinati sono: " + predictNumbers.join(" - ");
     }
     resultDisplay.innerHTML = predict;
-}, 31000);
+}, 6000);
 
 
 // FUNZIONI
